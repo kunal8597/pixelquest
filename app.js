@@ -298,10 +298,10 @@ function endGame() {
         coins: 0,
       })
 
-      //Remove me from Firebase when I disconnect
+      //Disconnect
       playerRef.onDisconnect().remove();
 
-      //Begin the game now that we are signed in
+      //Start game after sign in
       initGame();
     } else {
       //You're logged out.
@@ -311,7 +311,7 @@ function endGame() {
   firebase.auth().signInAnonymously().catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
-    // ...
+    
     console.log(errorCode, errorMessage);
   });
 
